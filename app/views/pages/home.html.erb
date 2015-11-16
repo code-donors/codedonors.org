@@ -240,12 +240,22 @@
                   <hr class="primary">
                   <p>Si estas interesado suscribete a nuestra lista de correo, te mantendremos informado del avance de la iniciativa</p>
               </div>
-              <div class="col-lg-4 col-lg-offset-4 text-center">
-                  <p><i class="fa fa-envelope fa-3x wow bounceIn"></i></p>
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                  </div>
-                  <a href="#" class="btn btn-primary btn-xl">Suscribirme!</a>
+              <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <%= simple_form_for(@user, html: { class: '' }) do |f| %>
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <%= f.input :email, { class: "form-control"} %>
+                      </div>
+                      <div class="col-lg-4">
+                        <%= f.label "Soy" %>
+                        <%= f.select :subscriber_type, User.subscriber_types.keys.to_a.map{|st| st.humanize}, {}, { class: "form-control" } %>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <%= f.submit "Suscribirme!", class: "btn btn-primary btn-xl" %>
+                    </div>
+                  <% end %>
+
               </div>
           </div>
       </div>
