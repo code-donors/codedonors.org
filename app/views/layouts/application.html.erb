@@ -6,41 +6,14 @@
     <meta name="description" content="CodeDonors.org - Donate code for non profit organizations">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CodeDonors.org</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">CodeDonors.org</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Inicio</a></li>
-                  <li><a href="#">Organizaciones</a></li>
-                  <li><a href="#">Acerca de</a></li>
-                  <li><a href="#">Contacto</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
+  <body id="page-top">
 
-          <%= yield %>
+    <%= yield %>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p><a href="http://codedonors.org">CodeDonors.org</a> by <a href="http://medellinrb.org">Medellin.rb</a></p>
-            </div>
-          </div>
-
-        </div> <!-- cover-container -->
-      </div> <!-- site-wrapper-inner -->
-    </div> <!-- site-wrapper -->
-
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>
