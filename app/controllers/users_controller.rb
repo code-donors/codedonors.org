@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to root_path
+    if @user.save
+      @info = "Gracias por suscribirte, te mantendremos informado!"
+    else
+      @info = "Hubo un error al intentar subscribirte, intentalo de nuevo por favor"
+    end
   end
 
   private

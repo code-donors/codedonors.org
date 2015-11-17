@@ -241,18 +241,18 @@
                   <p>Si estas interesado suscribete a nuestra lista de correo, te mantendremos informado del avance de la iniciativa</p>
               </div>
               <div class="col-lg-8 col-lg-offset-2 text-center">
-                  <%= simple_form_for(@user, html: { class: '' }) do |f| %>
+                  <%= simple_form_for(@user, html: { class: '' }, remote: true) do |f| %>
                     <div class="row">
                       <div class="col-lg-8">
                         <%= f.input :email, { class: "form-control"} %>
                       </div>
                       <div class="col-lg-4">
                         <%= f.label "Soy" %>
-                        <%= f.select :subscriber_type, User.subscriber_types.keys.to_a.map{|st| st.humanize}, {}, { class: "form-control" } %>
+                        <%= f.select :subscriber_type, User.subscriber_types.keys.to_a, {}, { class: "form-control" } %>
                       </div>
                     </div>
                     <div class="row">
-                      <%= f.submit "Suscribirme!", class: "btn btn-primary btn-xl" %>
+                      <%= f.submit "Suscribirme!", class: "btn btn-primary btn-xl wow tada" %>
                     </div>
                   <% end %>
 
@@ -270,3 +270,17 @@
         </div>
       </div>
   </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="subscribe-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
